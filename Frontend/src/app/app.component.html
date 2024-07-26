@@ -1,0 +1,137 @@
+<div class="container">
+  <div class="row text-center mt-4">
+    <div class="col">
+      <img
+        src="../assets/img/AngularNetCore.jpg"
+        alt=""
+        class="img-fluid"
+        width="200px"
+      />
+    </div>
+  </div>
+  <div class="row text-center mt-5">
+    <div class="col">
+      <h2>ABM con Angular + Backend Web Api .Net Core</h2>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-1">
+      <label for="txtId" class="from-label">ID</label>
+      <input
+        type="text"
+        name="txtId"
+        id="txtId"
+        class="form-control"
+        [(ngModel)]="producto.id"
+        disabled="true"
+      />
+    </div>
+    <div class="col-md-3">
+      <label for="txtNombre" class="from-label">Nombre</label>
+      <input
+        type="text"
+        name="txtNombre"
+        id="txtNombre"
+        class="form-control"
+        [(ngModel)]="producto.nombre"
+        required
+      />
+    </div>
+    <div class="col-md-3">
+      <label for="txtDesc" class="from-label">Descripcion</label>
+      <input
+        type="text"
+        name="txtDescripcion"
+        id="txtDescripcion"
+        class="form-control"
+        [(ngModel)]="producto.descripcion"
+      />
+    </div>
+    <div class="col-md-2">
+      <label for="txtDesc" class="from-label">Código</label>
+      <input
+        type="text"
+        name="txtCodigo"
+        id="txtCodigo"
+        class="form-control"
+        [(ngModel)]="producto.codigo"
+      />
+    </div>
+    <div class="col-md-2">
+      <label for="txtDesc" class="from-label">Precio</label>
+      <input
+        type="number"
+        name="txtPrecio"
+        id="txtPrecio"
+        class="form-control"
+        [(ngModel)]="producto.precio"
+      />
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col">
+      <button
+        class="btn btn-success"
+        type="button"
+        (click)="onAgregarProducto(producto)"
+      >
+        Agregar
+      </button>
+      <button
+        class="btn btn-warning m-2"
+        type="button"
+        (click)="onActualizarProducto(producto)"
+      >
+        Modificar
+      </button>
+      <button
+        class="btn btn-danger"
+        type="button"
+        (click)="onBorrarProducto(producto.id)"
+      >
+        Eliminar
+      </button>
+      <button
+        class="btn btn-primary m-2"
+        type="button"
+        (click)="limpiarSeleccionado()"
+      >
+        Limpiar
+      </button>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col">
+      <table id="dtProductos" class="table table-striped" style="width: 100%">
+        <thead>
+          <tr>
+            <th>Seleccionar</th>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Codigo</th>
+            <th>Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of listaDeProductos">
+            <td>
+              <input
+                type="button"
+                value="Seleccionar"
+                (click)="onSeleccionarProducto(producto)"
+              />
+            </td>
+            <td>{{ producto.id }}</td>
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.descripcion }}</td>
+            <td>{{ producto.codigo }}</td>
+            <td>{{ producto.precio }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

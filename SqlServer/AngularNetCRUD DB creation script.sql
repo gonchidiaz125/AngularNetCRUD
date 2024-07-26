@@ -1,11 +1,11 @@
 
-CREATE DATABASE [Siscard]
+CREATE DATABASE [AngularNetCRUD]
  CONTAINMENT = NONE
  WITH CATALOG_COLLATION = DATABASE_DEFAULT
 GO
 
 
-USE [Siscard]
+USE [AngularNetCRUD]
 GO
 
 /****** Object:  Table [dbo].[Productos]    Script Date: 6/18/2024 5:21:34 PM ******/
